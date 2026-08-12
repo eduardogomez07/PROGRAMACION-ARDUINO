@@ -1,0 +1,45 @@
+/*
+  ============================================================
+  PROYECTO 01 - PARPADEO DE LED
+  ============================================================
+
+  Objetivo:
+  Encender y apagar un LED utilizando Arduino UNO.
+
+  Conceptos:
+  - pinMode()
+  - digitalWrite()
+  - delay()
+  - Salida digital
+
+  Hardware:
+  - Arduino UNO
+  - LED
+  - Resistencia de 330 ohm
+  - Protoboard
+
+ ============================================================
+*/
+
+const int LED = 13;
+
+void setup() {
+
+  // Configuramos el pin como salida
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+
+  // Encendemos el LED
+  digitalWrite(LED, HIGH);
+
+  // Esperamos 1 segundo
+  delay(1000);
+
+  // Apagamos el LED
+  digitalWrite(LED, LOW);
+
+  // Esperamos 1 segundo
+  delay(1000);
+}

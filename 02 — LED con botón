@@ -1,0 +1,48 @@
+/*
+  ============================================================
+  PROYECTO 02 - LED CONTROLADO POR BOTÓN
+  ============================================================
+
+  Objetivo:
+  Encender un LED cuando se presiona un botón.
+
+  Conceptos:
+  - Entrada digital
+  - Salida digital
+  - digitalRead()
+  - digitalWrite()
+  - if / else
+
+  Utilizamos INPUT_PULLUP para evitar utilizar una
+  resistencia externa de pull-up.
+  ============================================================
+*/
+
+const int LED = 13;
+const int BOTON = 2;
+
+void setup() {
+
+  pinMode(LED, OUTPUT);
+
+  // El Arduino utiliza una resistencia pull-up interna
+  pinMode(BOTON, INPUT_PULLUP);
+}
+
+void loop() {
+
+  int estadoBoton = digitalRead(BOTON);
+
+  // Con INPUT_PULLUP:
+  // LOW  = botón presionado
+  // HIGH = botón liberado
+
+  if (estadoBoton == LOW) {
+
+    digitalWrite(LED, HIGH);
+
+  } else {
+
+    digitalWrite(LED, LOW);
+  }
+}
